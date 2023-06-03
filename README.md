@@ -1,3 +1,3 @@
-# Algocp.Math
+# Algocpp.Math
 
 Algo.cpp math library
