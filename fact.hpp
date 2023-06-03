@@ -13,9 +13,6 @@ namespace algocpp
 {
 	namespace math
 	{
-		/// @brief Find the factorial
-		/// @param x Value to be factorialized (x>=0)
-		/// @return x!
 		inline unsigned long long fact(unsigned long long x)
 		{
 			assert(x >= 0);

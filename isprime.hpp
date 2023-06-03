@@ -15,9 +15,6 @@ namespace algocpp
 {
 	namespace math
 	{
-		/// @brief Determines whether a number is prime or not.
-		/// @param x Number to be determined.
-		/// @return prime number or not
 		inline bool isprime(long long x)
 		{
 			if (x < 2)
