@@ -13,33 +13,14 @@ namespace algocpp
 {
 	namespace math
 	{
-		inline int fact(int x)
-		{
-			assert(x >= 0);
-			int result = 1;
-			for (int i = 1; i <= x; i++)
-			{
-				result *= i;
-			}
-			return result;
-		}
-
-		inline long long fact(long long x)
-		{
-			assert(x >= 0);
-			long long result = 1;
-			for (int i = 1; i <= x; i++)
-			{
-				result *= i;
-			}
-			return result;
-		}
-
+		/// @brief Find the factorial
+		/// @param x Value to be factorialized (x>=0)
+		/// @return x!
 		inline unsigned long long fact(unsigned long long x)
 		{
 			assert(x >= 0);
 			unsigned long long result = 1;
-			for (int i = 1; i <= x; i++)
+			for (unsigned long long i = 1; i <= x; i++)
 			{
 				result *= i;
 			}
