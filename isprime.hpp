@@ -6,11 +6,11 @@
 
 // https://qiita.com/asksaito/items/76b71602dd956b79dbf7
 
-#include <math.h>
 
 #ifndef ALGOCPP_MATH_ISPRIME
 #define ALGOCPP_MATH_ISPRIME
 
+#include <math.h>
 namespace algocpp
 {
 	namespace math
