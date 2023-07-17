@@ -4,6 +4,7 @@
 // This file is part of algocpp and is copyrighted by algocpp.
 // If used, it must comply with the MIT License.
 
+// Thanks by @asksaito
 // https://qiita.com/asksaito/items/76b71602dd956b79dbf7
 
 #ifndef ALGOCPP_MATH_ISPRIME
