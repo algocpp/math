@@ -18,7 +18,6 @@ namespace algocpp
 	namespace math
 	{
 
-#ifndef BOOST_MP_CPP_INT_HPP
 		inline unsigned long long fact(long long x)
 		{
 			if (x < 0)
@@ -33,7 +32,8 @@ namespace algocpp
 			}
 			return result;
 		}
-#else
+
+#ifdef BOOST_MP_CPP_INT_HPP
 		inline boost::multiprecision::cpp_int fact(boost::multiprecision::cpp_int x)
 		{
 			if (x < 0)
