@@ -20,7 +20,7 @@ namespace algocpp
 {
 	namespace math
 	{
-		inline bool isprime(long long x)
+		inline bool isprime(long long x) noexcept
 		{
 			if (x < 2)
 				return false;
