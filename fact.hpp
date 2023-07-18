@@ -26,7 +26,7 @@ namespace algocpp
 			}
 
 			unsigned long long result = 1;
-			for (unsigned long long i = 1; i <= x; i++)
+			for (long long i = 1; i <= x; i++)
 			{
 				result *= i;
 			}
