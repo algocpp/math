@@ -1,4 +1,4 @@
-
+﻿
 // algocpp/math/isprime.hpp
 //
 // This file is part of algocpp and is copyrighted by algocpp.
@@ -28,8 +28,7 @@ namespace algocpp
 				return true;
 			else if (x % 2 == 0)
 				return false;
-			long double sqrtNum = sqrt(x);
-			for (unsigned long long i = 3; i <= sqrtNum; i += 2)
+			for (unsigned long long i = 3; i <= (unsigned long long)(sqrt(x)); i += 2)
 			{
 				if (x % i == 0)
 				{
