@@ -9,7 +9,7 @@
 
 #include <algocpp/exception/numeric.hpp>
 
-#if __has_include(<boost/multiprecision/cpp_int.hpp>)
+#if !defined(ALGOCPP_DONT_LIB) && __has_include(<boost/multiprecision/cpp_int.hpp>)
 #include <boost/multiprecision/cpp_int.hpp>
 #endif
 
