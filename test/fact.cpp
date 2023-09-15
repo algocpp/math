@@ -5,7 +5,6 @@
 #include <stdexcept>
 using namespace algocpp::math;
 
-// int
 TEST(math_fact, integer)
 {
 	ASSERT_EQ(fact(5), 120);
@@ -16,7 +15,6 @@ TEST(math_fact, minus_integer)
 	ASSERT_THROW(fact(-1), std::invalid_argument);
 }
 
-// int64_t
 TEST(math_fact, int64)
 {
 	std::int64_t a = 5;
