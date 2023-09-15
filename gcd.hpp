@@ -16,11 +16,13 @@ namespace algocpp
 {
 	namespace math
 	{
-#ifndef BOOST_MP_CPP_INT_HPP
-		inline constexpr unsigned long long gcd(unsigned long long a, unsigned long long b) noexcept
+#ifdef BOOST_MP_CPP_INT_HPP
+		using max_integer = boost::multiprecision::cpp_int;
 #else
-		inline boost::multiprecision::cpp_int gcd(boost::multiprecision::cpp_int a, boost::multiprecision::cpp_int b)
+		using max_integer = unsigned long long;
 #endif
+
+		inline max_integer gcd(max_integer a, max_integer b)
 		{
 #ifdef BOOST_MP_CPP_INT_HPP
 			if (a < 0 || b < 0)
