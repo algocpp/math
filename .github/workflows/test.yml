@@ -8,11 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: label change test1
       run: | 
         pwd
         ls
+        tree
     - name: label change test2
       run: |
         echo Add other actions to build,
