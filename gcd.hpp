@@ -29,11 +29,6 @@ namespace algocpp
 			return base::base_gcd(a, b);
 		}
 
-		inline constexpr long long gcd(long long a, long long b) noexcept
-		{
-			return base::base_gcd(a, b);
-		}
-
 #ifdef BOOST_MP_CPP_INT_HPP
 		inline boost::multiprecision::cpp_int gcd(boost::multiprecision::cpp_int a, boost::multiprecision::cpp_int b) noexcept
 		{
