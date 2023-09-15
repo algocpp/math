@@ -9,12 +9,31 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: label change test1
-      run: | 
-        pwd
-        ls
-        tree
-    - name: label change test2
+    - name: File tree
+      run: tree
+
+    - name: Install Google Test
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        git clone https://github.com/google/googletest.git
+        cd googletest
+        mkdir build
+        cd build
+        cmake ..
+        make
+        cd ../
+        sudo cp -r ./googlemock/include/gmock /usr/local/include/gmock
+        sudo cp -r ./googletest/include/gtest /usr/local/include/gtest
+        sudo cp ./build/lib/*.a /usr/local/lib/
+        cd ../
+    
+    - name: Build Test Code
+      run: |
+        cd test
+        mkdir build
+        cd build
+        cmake ..
+        make
+    
+    - name: Run Tests
+      run: |
+        ./fact
