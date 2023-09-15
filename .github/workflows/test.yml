@@ -36,4 +36,5 @@ jobs:
     
     - name: Run Tests
       run: |
+        cd test/build
         ./fact
