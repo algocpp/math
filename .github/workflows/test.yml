@@ -12,6 +12,9 @@ jobs:
     - name: File tree
       run: tree
 
+    - name: Install Boost
+      run: sudo apt install -y libboost-all-dev
+
     - name: Install Google Test
       run: |
         git clone https://github.com/google/googletest.git
