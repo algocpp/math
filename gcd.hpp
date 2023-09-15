@@ -17,8 +17,8 @@ namespace algocpp
 	{
 		namespace base
 		{
-			template <typename T>
-			inline constexpr T base_gcd(T a, T b) noexcept
+			template <typename T1, typename T2>
+			inline constexpr T1 base_gcd(T1 a, T2 b) noexcept
 			{
 				return (b == 0 ? a : base_gcd(b, a % b));
 			}
