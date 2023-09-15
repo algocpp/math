@@ -7,7 +7,7 @@
 #ifndef ALGOCPP_MATH_FACT
 #define ALGOCPP_MATH_FACT
 
-#include <algocpp/exception/numeric.hpp>
+#include <stdexcept>
 
 #if !defined(ALGOCPP_DONT_LIB) && __has_include(<boost/multiprecision/cpp_int.hpp>)
 #include <boost/multiprecision/cpp_int.hpp>
@@ -22,7 +22,7 @@ namespace algocpp
 		{
 			if (x < 0)
 			{
-				throw algocpp::exception::numeric_error("The factorial of negative numbers is undefined.");
+				throw std::invalid_argument("The factorial of negative numbers is undefined.");
 			}
 
 			unsigned long long result = 1;
@@ -38,7 +38,7 @@ namespace algocpp
 		{
 			if (x < 0)
 			{
-				throw algocpp::exception::numeric_error("The factorial of negative numbers is undefined.");
+				throw std::invalid_argument("The factorial of negative numbers is undefined.");
 			}
 
 			boost::multiprecision::cpp_int result = 1;
