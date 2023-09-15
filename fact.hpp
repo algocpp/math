@@ -48,6 +48,21 @@ namespace algocpp
 			}
 			return result;
 		}
+
+		inline boost::multiprecision::int1024_t fact(boost::multiprecision::int1024_t x)
+		{
+			if (x < 0)
+			{
+				throw std::invalid_argument("The factorial of negative numbers is undefined.");
+			}
+
+			boost::multiprecision::int1024_t result = 1;
+			for (boost::multiprecision::int1024_t i = 1; i <= x; i++)
+			{
+				result *= i;
+			}
+			return result;
+		}
 #endif
 
 	}
