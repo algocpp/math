@@ -64,8 +64,8 @@ namespace algocpp
 		template <typename... T>
 		inline max_integer gcd(T... v)
 		{
-			std::vector<max_integer> arg;
-			for (max_integer x : std::initializer_list<max_integer>{v...})
+			std::vector<T> arg;
+			for (T x : std::initializer_list<T>{v...})
 			{
 				arg.emplace_back(x);
 			}
