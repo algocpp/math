@@ -27,17 +27,30 @@ namespace algocpp
 
 		namespace base
 		{
-			inline max_integer base_gcd(max_integer a, max_integer b)
+			inline long long base_gcd(long long a, long long b)
 			{
-#ifdef BOOST_MP_CPP_INT_HPP
 				if (a < 0 || b < 0)
 				{
 					throw std::invalid_argument("Any value must be a positive integer.");
 				}
-#endif
 
 				return (b == 0 ? a : base_gcd(b, a % b));
 			}
+
+			inline max_integer base_gcd(max_integer a, max_integer b)
+			{
+				if (a < 0 || b < 0)
+				{
+					throw std::invalid_argument("Any value must be a positive integer.");
+				}
+
+				return (b == 0 ? a : base_gcd(b, a % b));
+			}
+		}
+
+		inline long long gcd(long long a, long long b)
+		{
+			return base::base_gcd(a, b);
 		}
 
 		inline max_integer gcd(max_integer a, max_integer b)
@@ -45,14 +58,15 @@ namespace algocpp
 			return base::base_gcd(a, b);
 		}
 
-		inline max_integer gcd(std::vector<max_integer> v)
+		template <typename T>
+		inline T gcd(std::vector<T> v)
 		{
 			if (v.size() < 2)
 			{
 				throw std::invalid_argument("The length of the argument must be at least 2.");
 			}
 
-			max_integer result = gcd(v[0], v[1]);
+			T result = gcd(v[0], v[1]);
 			for (unsigned long long i = 2; i < v.size(); ++i)
 			{
 				result = gcd(result, v[i]);
