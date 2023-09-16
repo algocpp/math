@@ -45,3 +45,4 @@ jobs:
       run: |
         cd test/build
         ./fact
+        ./gcd

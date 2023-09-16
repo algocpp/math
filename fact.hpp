@@ -26,7 +26,7 @@ namespace algocpp
 			}
 
 			unsigned long long result = 1;
-			for (long long i = 1; i <= x; i++)
+			for (long long i = 1; i <= x; ++i)
 			{
 				result *= i;
 			}
@@ -42,7 +42,7 @@ namespace algocpp
 			}
 
 			boost::multiprecision::cpp_int result = 1;
-			for (boost::multiprecision::cpp_int i = 1; i <= x; i++)
+			for (boost::multiprecision::cpp_int i = 1; i <= x; ++i)
 			{
 				result *= i;
 			}
