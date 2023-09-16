@@ -9,7 +9,7 @@
 
 #include <stdexcept>
 #include <vector>
-#include <initializer_list>
+#include <array>
 
 #if !defined(ALGOCPP_NO_LIB) && __has_include(<boost/multiprecision/cpp_int.hpp>)
 #include <boost/multiprecision/cpp_int.hpp>
@@ -60,6 +60,23 @@ namespace algocpp
 
 		template <typename T>
 		inline T gcd(std::vector<T> v)
+		{
+			if (v.size() < 2)
+			{
+				throw std::invalid_argument("The length of the argument must be at least 2.");
+			}
+
+			T result = gcd(v[0], v[1]);
+			for (unsigned long long i = 2; i < v.size(); ++i)
+			{
+				result = gcd(result, v[i]);
+			}
+
+			return result;
+		}
+
+		template <typename T,std::size_t N>
+		inline T gcd(std::array<T,N> v)
 		{
 			if (v.size() < 2)
 			{

@@ -4,6 +4,7 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include <stdexcept>
 #include <vector>
+#include <array>
 using namespace algocpp::math;
 using cint = boost::multiprecision::cpp_int;
 
@@ -62,5 +63,41 @@ TEST(math_gcd, vector_zero)
 TEST(math_gcd, vector_int)
 {
 	std::vector<int> x{32, 16, 12};
+	EXPECT_EQ(gcd(x), 4);
+}
+
+TEST(math_gcd, array_max)
+{
+	std::array<cint, 4> x = {630, 300, 520, 3150};
+	EXPECT_EQ(gcd(x), cint("10"));
+}
+
+TEST(math_gcd, array_long)
+{
+	std::array<cint, 17> x = {432, 4320, 320, 630, 150, 310, 594, 382, 472, 582, 588, 596, 482, 594, 194, 682, 192};
+	EXPECT_EQ(gcd(x), cint("2"));
+}
+
+TEST(math_gcd, array_minus)
+{
+	std::array<cint, 12> x = {3, 2, 5, 6, 4, 2, 6, 8, 6, 54, -1, 483};
+	EXPECT_THROW(gcd(x), std::invalid_argument);
+}
+
+TEST(math_gcd, array_one)
+{
+	std::array<cint, 1> x = {3};
+	EXPECT_THROW(gcd(x), std::invalid_argument);
+}
+
+TEST(math_gcd, array_zero)
+{
+	std::array<cint, 0> x = {};
+	EXPECT_THROW(gcd(x), std::invalid_argument);
+}
+
+TEST(math_gcd, array_int)
+{
+	std::array<int, 2> x{32, 16, 12};
 	EXPECT_EQ(gcd(x), 4);
 }
