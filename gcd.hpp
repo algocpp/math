@@ -60,18 +60,6 @@ namespace algocpp
 
 			return result;
 		}
-
-		template <typename... T>
-		inline auto gcd(T... arg) -> decltype(std::initializer_list<max_integer>{arg...}, std::declval<void>())
-		{
-			std::vector<max_integer> tmp;
-			for (auto &&x : {arg...})
-			{
-				tmp.emplace_back(x);
-			}
-
-			return gcd(tmp);
-		}
 	}
 }
 

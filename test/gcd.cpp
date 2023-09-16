@@ -64,33 +64,3 @@ TEST(math_gcd, vector_int)
 	std::vector<int> x{32, 16, 12};
 	EXPECT_EQ(gcd(x), 4);
 }
-
-TEST(math_gcd, arg)
-{
-	EXPECT_EQ(gcd(32, 16, 12), 4);
-}
-
-TEST(math_gcd, arg_long)
-{
-	EXPECT_EQ(gcd(32, 6, 12, 8, 4, 2, 12, 4, 56), 2);
-}
-
-TEST(math_gcd, arg_max)
-{
-	EXPECT_EQ(gcd(cint("31521452"), cint("43255762"), cint("4379834")), cint("2"));
-}
-
-TEST(math_gcd, arg_one)
-{
-	EXPECT_THROW(gcd(31415926535), std::invalid_argument);
-}
-
-TEST(math_gcd, arg_zero)
-{
-	EXPECT_THROW(gcd(), std::invalid_argument);
-}
-
-TEST(math_gcd, arg_minus)
-{
-	EXPECT_THROW(gcd(42283, 43920432, 84902, 29, 42, -1, 438), std::invalid_argument);
-}
