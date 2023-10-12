@@ -43,10 +43,12 @@ namespace algocpp
 
 			inline max_integer base_gcd(max_integer a, max_integer b)
 			{
+#ifdef BOOST_MP_CPP_INT_HPP
 				if (a < 0 || b < 0)
 				{
 					throw std::invalid_argument("Any value must be a positive integer.");
 				}
+#endif
 
 				return (b == 0 ? a : base_gcd(b, a % b));
 			}
